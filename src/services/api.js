@@ -5,7 +5,7 @@ axios.defaults.headers.put['Access-Control-Allow-Origin'] = '*';
 axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
+  baseURL: "https://digitai-backend.vercel.app/",
 });
 
 export default api;
