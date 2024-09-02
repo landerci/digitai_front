@@ -8,7 +8,6 @@ import * as S from './styles';
 import Input from '../../components/input';
 
 import Modal from '../../components/modal';
-import { Title, Wrapper } from '../home/styles';
 import { Button } from 'react-bootstrap';
 import roomService from '../../services/RoomService';
 
@@ -42,15 +41,12 @@ const Room = () => {
  
     return (
         <>
-            <Title>DIGITAÍ</Title>
             <S.LayoutPagina>
 
 
                 <Modal title="DIGITAÍ" show={modalVisible} setShow={() => { }} >
-                    <Wrapper>
                         <Input type="text" placeholder="COMO VOCÊ SE CHAMA?" value={usuario} onChange={(e) => { setUsuario(e.target.value) }} />
 
-                    </Wrapper>
                     <Button style={{ textAlign: 'center', display: 'flex', width: '100%', textAlign: 'center', alignItems: 'center', justifyContent: 'center' }} onClick={() => {
                         setModalVisible(false)
                         roomService.CadastrarUsuario(usuario).catch((err) => console.log(err))
@@ -82,7 +78,6 @@ const Room = () => {
                     }
                 </S.ListaMensagens>
                 <S.PainelMensagem>
-                    <Wrapper>
                         Digitaí uma mensagem
                         <Input type="textarea" value={mensagem} onChange={(e) => { setMensagem(e.target.value) }} />
                         <Button style={{ textAlign: 'center', display: 'flex', width: '100%', textAlign: 'center', alignItems: 'center', justifyContent: 'center' }} 
@@ -90,7 +85,6 @@ const Room = () => {
                            enviarMensagem()                
                            loadMessages()
                         }}>ENVIAR</Button>
-                    </Wrapper>
                 </S.PainelMensagem>
             </S.LayoutPagina>
         </>
